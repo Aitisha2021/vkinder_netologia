@@ -1,8 +1,11 @@
 from handlers import MessageHandler
+from config import *
+
 
 def main():
-    token = input('Введите ваш VK API токен: ')
-    handler = MessageHandler(token)
+    token = TOKEN_GROUP
+    token_user = TOKEN_USER
+    handler = MessageHandler(token, token_user)
     handler.run()
 
 if __name__ == "__main__":

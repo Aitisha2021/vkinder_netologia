@@ -2,8 +2,9 @@ from vk_api.longpoll import VkEventType
 from core import VKApi, Users, Photos, Database
 
 class MessageHandler:
-    def __init__(self, token):
-        self.api = VKApi(token)
+    def __init__(self, token, token_user):
+        self.api = VKApi(token, token_user)
+        self.user_token = token_user
         self.users = Users(self.api, Database())
         self.photos = Photos(self.api)
 
